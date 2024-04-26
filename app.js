@@ -1,10 +1,6 @@
 const express = require('express');
 const app = express();
 
-const bodyParser = require('body-parser');
-const session = require('express-session');
-
-
 
 const middlewares = require('./middlewares');
 const routes = require('./routes');

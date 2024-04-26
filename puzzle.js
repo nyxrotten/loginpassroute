@@ -8,13 +8,13 @@
 
 //Usado?: X
 const bodyParser = require('body-parser');
-//--- Explicación:
+//--- Explicación: Requiere la función para parsear el texto del input
 
 // -------------------------------------------------------------------------------------
 
 //Usado?: X
 const session = require('express-session');
-//--- Explicación:
+//--- Explicación: Requiere el módulo de Express Session
 
 // -------------------------------------------------------------------------------------
 
@@ -26,73 +26,73 @@ const express = require('express');
 
 //Usado?: X
 const bodyParser = require('body-parser');
-//--- Explicación:
+//--- Explicación: Requiere la función para parsear el texto del input
 
 // -------------------------------------------------------------------------------------
 
 //Usado?: X
 const session = require('express-session');
 //--- Explicación:
-
+//Requiere el módulo de Express Session
 // -------------------------------------------------------------------------------------
 
 //Usado?: X
 const dotenv = require('dotenv');
-//--- Explicación:
+//--- Explicación: Requiere el módulo que carga la variable de .env
 
 // -------------------------------------------------------------------------------------
 
 //Usado?: X
 const middlewares = require('./middlewares');
-//--- Explicación:
+//--- Explicación: Traer la información de la página de middleware
 
 // -------------------------------------------------------------------------------------
 
 //Usado?: X
 const routes = require('./routes');
-//--- Explicación:
+//--- Explicación: Traer la información de la página de routes
 
 // -------------------------------------------------------------------------------------
 
 //Usado?: X
 dotenv.config();
 //--- Explicación:
-
+// Función que configura el dotenv
 // -------------------------------------------------------------------------------------
 
 //Usado?: X
 const app = express();
 //--- Explicación:
-
+// Mete en una variable la llamada a express
 // -------------------------------------------------------------------------------------
 
 //Usado?: X
 const PORT = 4000;
 //--- Explicación:
-
+// Declara una constante para asignar el puerto del servidor
 // -------------------------------------------------------------------------------------
 
 //Usado?: X
 const dotenv = require('dotenv');
-//--- Explicación:
+//--- Explicación: Requiere el módulo que carga la variable de .env
 
 // -------------------------------------------------------------------------------------
 
 //Usado?: X
 dotenv.config();
 //--- Explicación:
-
+// Función que configura el dotenv
 // -------------------------------------------------------------------------------------
 
 //Usado?: X
 middlewares.setupApp(app);
 //--- Explicación: 
-
+// FUNCION MAL ESCRITA Ejecuta la función setupApp de middlewares.js
 // -------------------------------------------------------------------------------------
 
 //Usado?: X
 routes.setup(app);
-//--- Explicación: 
+//--- Explicación: Ejecuta la función setup de routes
 
 // -------------------------------------------------------------------------------------
 
@@ -158,7 +158,7 @@ const setupAPP = (app) => {
     saveUninitialized: true,
   }));
 };
-//--- Explicación: 
+//--- Explicación: Función que corrige el formato del input de la palabra secreta declara la session
 
 //Usado?: X
 app.post('/profile', middlewares.validarPalabraMiddleware, (req, res) => {
@@ -169,25 +169,25 @@ app.post('/profile', middlewares.validarPalabraMiddleware, (req, res) => {
     </form>
   `);
 });
-//--- Explicación: 
-
+//--- Explicación: Entrada a la ruta profile
+//
 // -------------------------------------------------------------------------------------
 
-//Usado?:
+//Usado?: X
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//--- Explicación: 
+//--- Explicación: Corrige formato
 
 // -------------------------------------------------------------------------------------
 
-//Usado?:
+//Usado?: 
 app.use(session({
   secret: process.env.PALABRA_SECRETA || 'secretoSuperSecreto',
   resave: false,
   saveUninitialized: true,
 }));
 
-//--- Explicación: 
+//--- Explicación: Declara session
 
 // -------------------------------------------------------------------------------------
 
@@ -195,7 +195,7 @@ app.use(session({
 app.listen(PORT, () => {
   console.log(`Servidor en ejecución en http://localhost:${PORT}`);
 });
-//--- Explicación: 
+//--- Explicación: Función que abre el servidor en el puerto indicado
 
 // -------------------------------------------------------------------------------------
 
@@ -207,7 +207,7 @@ const verificarSesionMiddleware = (req, res, next) => {
     res.redirect('/?error=2');
   }
 };
-//--- Explicación: 
+//--- Explicación: Middleware que verifica si se puede entrar en la sesión
 
 // -------------------------------------------------------------------------------------
 
@@ -235,7 +235,7 @@ app.post('/logout', (req, res) => {
     res.redirect('/');
   });
 });
-//--- Explicación: 
+//--- Explicación: Cierra sesión
 
 // -------------------------------------------------------------------------------------
 
@@ -243,7 +243,7 @@ app.post('/logout', (req, res) => {
 module.exports = {
   setup,
 };
-//--- Explicación:
+//--- Explicación: Exporta la función setup
 
 // -------------------------------------------------------------------------------------
 
@@ -253,7 +253,7 @@ module.exports = {
   verificarSesionMiddleware,
   setupAPP,
 };
-//--- Explicación:
+//--- Explicación: Exporta las funciones validarPalabraMiddleware, verificarSesionMiddleware, setupAPP,
 
 // -------------------------------------------------------------------------------------
 
