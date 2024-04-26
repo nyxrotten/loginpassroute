@@ -13,7 +13,7 @@ Bienvenidos al puzzle de código. Como sabéis un puzzle se compone de piezas y 
 
 * Además hay un archivo `puzzle.js` en el que están todos y cada uno de los "trozos" de código que necesitarás para componerlo. Está descolocado, por tanto tendrás que coger cada trozo y llevarlo donde sea necesario. 
 
-* Esos "trozos" tienen dos partes. 
+* Esos "trozos" tienen dos partes.
 
 - Una pondrá "si ya lo has usado", si es así no se puede volver a usar. Márcalo con una X o un yes.... Así llevarás un registro visual de lo que llevas y lo que te queda. 
 - También hay otro apartado donde pone "explicación". Ahí deberás poner un pequeño resumen de lo que hace ese trozo de código. Podéis buscar en internet cosas que no sepáis para poder componeren la totalidad el programa.
